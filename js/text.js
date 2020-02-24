@@ -9,12 +9,8 @@ var loader = new THREE.GLTFLoader();
 
 camera.position.z = 5;
 
-loader.load( 'path/to/model.glb', function ( gltf ) {
-
+loader.load( 'js/sean.glb', function ( gltf ) {
 	scene.add( gltf.scene );
-
 }, undefined, function ( error ) {
-
 	console.error( error );
-
 } );
