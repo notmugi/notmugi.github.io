@@ -24,8 +24,6 @@ function init()
 
 
 		// An object becomes visible only if its material-type is defined.
-		material1 = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
-		material2 = new THREE.MeshNormalMaterial( { color: 0xff0000, wireframe: false } );
 
 		// Mesh actually creates the 3D object from the geometry and the material
 
