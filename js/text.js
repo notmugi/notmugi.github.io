@@ -41,7 +41,7 @@ function init()
 
 //maybe here
 var loader = new THREE.GLTFLoader();
-loader.load('sean.glb', function(gltf) {
+loader.load('js/sean.glb', function(gltf) {
     var sean = gltf.scene;
     sean.traverse((object) => {
       if (!object.isMesh) return;
@@ -51,6 +51,9 @@ loader.load('sean.glb', function(gltf) {
 });
 
 scene.add( hemiLight );
+
+
+
 scene.add( dirLight );
 
 		renderer = new THREE.WebGLRenderer();
