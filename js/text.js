@@ -9,7 +9,7 @@ var first=true;
 window.onload = function()
 {
     init();
-    animate();
+    //animate();
 };
 
 function init()
@@ -27,5 +27,5 @@ function init()
 			}, undefined, function ( error ) {
 				console.error( error );
 			} );
-
+}
 //
