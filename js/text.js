@@ -1,5 +1,6 @@
 var parentDiv, camera, scene, renderer, group, mesh;
-
+const fontJson = require( "./fonts/gentilis_bold.typeface.json" );
+const font = new THREE.Font( fontJson );
 // rotation along x direction controls y-rotation
 var targetRotationY = 0;
 var targetRotationYOnMouseDown = 0;
@@ -29,7 +30,7 @@ function init()
 		scene = new THREE.Scene();
 
 		// Note: The font name must be lowercase even if the file which contains it has uppercase name.
-		var textOptions = { size: 40, height: 10, curveSegments: 5, font: "helvetiker" };
+		var textOptions = { size: 40, height: 10, curveSegments: 5, font: fontJson };
 		var textGeom = new THREE.TextGeometry( "Hello World", textOptions);
 
 		var material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, overdraw: true } );
