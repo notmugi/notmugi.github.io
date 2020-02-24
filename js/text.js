@@ -21,7 +21,7 @@ function main() {
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
-    loader.load("https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/js/z-Monster.gltf", gltf => {
+    loader.load("https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/js/sean.glb", gltf => {
         // model is a THREE.Group (THREE.Object3D)
         const mixer = new THREE.AnimationMixer(gltf.scene);
         // animations is a list of THREE.AnimationClip
