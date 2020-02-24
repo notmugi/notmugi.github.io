@@ -1,6 +1,7 @@
 var camera;
 var scene;
 var renderer;
+var loader = new THREE.GLTFLoader();
 var maxX, maxY, maxZ;
 var first=true;
 
@@ -12,7 +13,7 @@ window.onload = function()
 
 function init()
 {
-		var loader = new THREE.GLTFLoader();
+
 		var sceneWidth = window.innerWidth/2;
 		var sceneHeight = window.innerHeight/2 + 100;
 		// camera: vertical-field-of-view, aspect-ratio, near, far
