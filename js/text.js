@@ -4,7 +4,7 @@
 function main() {
 
     // renderer
-    const renderer = new THREE.WebGLRenderer( { antialias: true }, { alpha: true } ); renderer.setClearColor( 0x000000, 0 );
+    const renderer = new THREE.WebGLRenderer( { antialias: true,  alpha: true  }); renderer.setClearColor( 0x000000, 0 );
     renderer.setSize(800, 600);
     document.body.appendChild(renderer.domElement);
 
