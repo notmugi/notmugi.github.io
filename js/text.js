@@ -1,6 +1,5 @@
 var parentDiv, camera, scene, renderer, group, mesh;
-const fontJson = require( "./fonts/gentilis_bold.typeface.json" );
-const font = new THREE.Font( fontJson );
+
 // rotation along x direction controls y-rotation
 var targetRotationY = 0;
 var targetRotationYOnMouseDown = 0;
