@@ -13,7 +13,7 @@ function main() {
     camera.position.set(30, 10, 70); // settings in `sceneList` "Monster"
     camera.up.set(0, 1, 0);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
-		camera.zoom(1);
+		//camera.zoom(1);
     // scene and lights
     const scene = new THREE.Scene();
     scene.add(new THREE.AmbientLight(0xcccccc));
