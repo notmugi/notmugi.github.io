@@ -14,8 +14,8 @@ window.onload = function()
 function init()
 {
 		var loader = new THREE.GLTFLoader();
-		var sceneWidth = window.innerWidth/2;
-		var sceneHeight = window.innerHeight/2 + 100;
+		var sceneWidth = window.innerWidth;
+		var sceneHeight = window.innerHeight + 100;
 		// camera: vertical-field-of-view, aspect-ratio, near, far
 		camera = new THREE.PerspectiveCamera( 75, sceneWidth / sceneHeight, 1, 10000 );
 		camera.position.z = 1000;
