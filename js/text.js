@@ -1,126 +1,148 @@
-var camera;
-var scene;
-var renderer;
-var mesh1, mesh2, mesh3, mesh4, mesh5, mesh6, mesh7, mesh8, mesh9;
-var maxX, maxY, maxZ;
-var first=true;
+var parentDiv, camera, scene, renderer, group, mesh;
 
-window.onload = function()
-{
-		init();
-		animate();
-};
+// rotation along x direction controls y-rotation
+var targetRotationY = 0;
+var targetRotationYOnMouseDown = 0;
+var mouseX = 0;
+var mouseXOnMouseDown = 0;
+
+// rotation along y direction controls x-rotation
+var targetRotationX = 0;
+var targetRotationXOnMouseDown = 0;
+var mouseY = 0;
+var mouseYOnMouseDown = 0;
+
+// Capture screen parameters
+var WIDTH = window.innerWidth * 0.4;
+var HEIGHT = window.innerHeight * 0.6;
+
+init();
+animate();
 
 function init()
 {
-		var sceneWidth = window.innerWidth/2;
-		var sceneHeight = window.innerHeight/2 + 100;
-		// camera: vertical-field-of-view, aspect-ratio, near, far
-		camera = new THREE.PerspectiveCamera( 75, sceneWidth / sceneHeight, 1, 10000 );
-		camera.position.z = 1000;
+		// Add camera to the DIV main
+		parentDiv = document.getElementById( 'main' );
+		camera = new THREE.PerspectiveCamera( 50, WIDTH / HEIGHT, 1, 1000 );
+		camera.position.set( 0, 0, 500 );
 
-		// Define the geometry of the object
-		geometry1 = new THREE.OctahedronGeometry( 200, 0 );
-		geometry2 = new THREE.IcosahedronGeometry( 200, 0 );
-		geometry3 = new THREE.PlaneGeometry( 200, 200, 10, 10 );
-		geometry4 = new THREE.CylinderGeometry( 200, 300, 300, 32, 3, true );
-		geometry5 = new THREE.TetrahedronGeometry( 200, 0 );
-		geometry6 = new THREE.CubeGeometry( 200, 200, 200, 3, 3, 3 );
-		geometry7 = new THREE.TorusGeometry( 200, 32, 8, 32 );
-		geometry8 = new THREE.TorusKnotGeometry( 200, 32, 8, 16 , 1, 2);
-		geometry9 = new THREE.SphereGeometry( 200, 32, 32 );
-
-		// An object becomes visible only if its material-type is defined.
-		material1 = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
-		material2 = new THREE.MeshNormalMaterial( { color: 0xff0000, wireframe: false } );
-
-		// Mesh actually creates the 3D object from the geometry and the material
-		mesh1 = new THREE.Mesh( geometry1, material1 );
-		mesh2 = new THREE.Mesh( geometry2, material1 );
-		mesh3 = new THREE.Mesh( geometry3, material1 );
-		mesh4 = new THREE.Mesh( geometry4, material1 );
-		mesh5 = new THREE.Mesh( geometry5, material2 );
-		mesh6 = new THREE.Mesh( geometry6, material2 );
-		mesh7 = new THREE.Mesh( geometry7, material1 );
-		mesh8 = new THREE.Mesh( geometry8, material1 );
-		mesh9 = new THREE.Mesh( geometry9, material1 );
-
-		scene = new THREE.Fog(0x55AAFF);
 		scene = new THREE.Scene();
-		scene.add( mesh1 );
-		scene.add( mesh2 );
-		scene.add( mesh3 );
-		scene.add( mesh4 );
-		scene.add( mesh5 );
-		scene.add( mesh6 );
-		scene.add( mesh7 );
-		scene.add( mesh8 );
-		scene.add( mesh9 );
 
-		renderer = new THREE.WebGLRenderer();
-		renderer.setSize( sceneWidth, sceneHeight );
-		maxX = sceneWidth/2;
-		maxY = sceneHeight/2;
-		maxZ = maxX/2;
+		// Note: The font name must be lowercase even if the file which contains it has uppercase name.
+		var textOptions = { size: 40, height: 10, curveSegments: 5, font: "helvetiker" };
+		var textGeom = new THREE.TextGeometry( "Hello World", textOptions);
 
-		document.getElementById("main").appendChild( renderer.domElement );
+		var material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, overdraw: true } );
+		mesh = new THREE.Mesh( textGeom, material );
 
-		/* Move the objects away from each other */
-		var x1=560, x2=-560;
+		// Calculate the text dimensions so that we can position it correctly
+		textGeom.computeBoundingBox();
+		var textWidth = textGeom.boundingBox.max.x - textGeom.boundingBox.min.x;
+		mesh.position.set(-0.5 * textWidth, 0, 0);
 
-		mesh1.position.x = x2;
-		mesh1.position.y = x1;
+		group = new THREE.Object3D();
+		group.add( mesh );
 
-		mesh2.position.x = 0;
-		mesh2.position.y = x1;
+		scene.add( group );
 
-		mesh3.position.x = x1;
-		mesh3.position.y = x1;
+		renderer = new THREE.CanvasRenderer();
+		renderer.setSize( WIDTH, HEIGHT );
 
-		mesh4.position.x = x2;
-		mesh4.position.y = 0;
+		parentDiv.appendChild( renderer.domElement );
 
-		mesh5.position.x = 0;
-		mesh5.position.y = 0;
+		parentDiv.addEventListener( 'mousedown', onDocumentMouseDown, false );
+		parentDiv.addEventListener( 'touchstart', onDocumentTouchStart, false );
+		parentDiv.addEventListener( 'touchmove', onDocumentTouchMove, false );
+		window.addEventListener  ( 'resize', onWindowResize, false );
+}
 
-		mesh6.position.x = x1;
-		mesh6.position.y = 0;
+function onWindowResize()
+{
+		WIDTH = window.innerWidth * 0.4;
+		HEIGHT = window.innerHeight * 0.6;
+		camera.aspect = WIDTH / HEIGHT;
+		camera.updateProjectionMatrix();
+		renderer.setSize( WIDTH, HEIGHT );
+}
 
-		mesh7.position.x = x2;
-		mesh7.position.y = x2;
+function onDocumentMouseDown( event )
+{
+		event.preventDefault();
 
-		mesh8.position.x = 0;
-		mesh8.position.y = x2;
+		parentDiv.addEventListener( 'mousemove', onDocumentMouseMove, false );
+		parentDiv.addEventListener( 'mouseup', onDocumentMouseUp, false );
+		parentDiv.addEventListener( 'mouseout', onDocumentMouseOut, false );
 
-		mesh9.position.x = x1;
-		mesh9.position.y = x2;
+		mouseXOnMouseDown = event.clientX - WIDTH;
+		targetRotationYOnMouseDown = targetRotationY;
 
-		// Render finally
-		renderer.render( scene, camera );
+		mouseYOnMouseDown = event.clientY - HEIGHT;
+		targetRotationXOnMouseDown = targetRotationX;
+}
+
+function onDocumentMouseMove( event )
+{
+		mouseX = event.clientX - WIDTH;
+		targetRotationY = targetRotationYOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.02;
+
+		mouseY = event.clientY - HEIGHT;
+		targetRotationX = targetRotationXOnMouseDown + ( mouseY - mouseYOnMouseDown ) * 0.02;
+}
+
+function onDocumentMouseUp( event )
+{
+		parentDiv.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+		parentDiv.removeEventListener( 'mouseup', onDocumentMouseUp, false );
+		parentDiv.removeEventListener( 'mouseout', onDocumentMouseOut, false );
+ }
+
+function onDocumentMouseOut( event )
+{
+		parentDiv.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+		parentDiv.removeEventListener( 'mouseup', onDocumentMouseUp, false );
+		parentDiv.removeEventListener( 'mouseout', onDocumentMouseOut, false );
+}
+
+function onDocumentTouchStart( event )
+{
+		if ( event.touches.length == 1 )
+		{
+				event.preventDefault();
+				mouseXOnMouseDown = event.touches[ 0 ].pageX - WIDTH;
+				targetRotationYOnMouseDown = targetRotationY;
+		}
+}
+
+function onDocumentTouchMove( event )
+{
+		if ( event.touches.length == 1 )
+		{
+				event.preventDefault();
+				mouseX = event.touches[ 0 ].pageX - WIDTH;
+				targetRotationY = targetRotationYOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.05;
+		}
 }
 
 function animate()
 {
-		// Calls its function argument when the browser page is available to be refreshed
 		requestAnimationFrame( animate );
-
-		// make some changes to the object so that it appears in motion
-		rotate(mesh1);
-		rotate(mesh2);
-		rotate(mesh3);
-		rotate(mesh4);
-		rotate(mesh5);
-		rotate(mesh6);
-		rotate(mesh7);
-		rotate(mesh8);
-		rotate(mesh9);
-
-		renderer.render( scene, camera );
+		render();
 }
 
-function rotate (m)
+function render()
 {
-		m.rotation.x += 0.01;
-		m.rotation.y += 0.02;
-		m.rotation.z += 0.03;
+		mesh.material.visible = $("#visible")[0].checked;
+		mesh.material.wireframe = $("#wireframe")[0].checked;
+		mesh.material.transparent = $("#transparent")[0].checked;
+		mesh.material.skinning = $("#skinning")[0].checked;
+		mesh.material.opacity = $("#opacity")[0].value;
+
+		scale = $("#scale")[0].value;
+		mesh.scale.set(scale, scale, scale);
+
+		//mesh.castShadow = true;
+
+		group.rotation.x += ( targetRotationX - group.rotation.x ) * 0.02;
+		group.rotation.y += ( targetRotationY - group.rotation.y ) * 0.02;
+		renderer.render( scene, camera );
 }
