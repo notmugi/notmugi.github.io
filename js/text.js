@@ -34,16 +34,14 @@ function init()
 
 //maybe here
 var loader = new THREE.GLTFLoader();
-
-loader.load( 'js/sean.glb', function ( gltf ) {
-
-	scene.add( gltf.scene );
-
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
+loader.load('sean.glb', function(gltf) {
+    var sean = gltf.scene;
+    sean.traverse((object) => {
+      if (!object.isMesh) return;
+      object.material.wireframe = true;
+    });
+    scene.add(sean);
+});
 
 		renderer = new THREE.WebGLRenderer();
 		renderer.setSize( sceneWidth, sceneHeight );
