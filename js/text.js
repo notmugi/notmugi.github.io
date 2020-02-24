@@ -13,6 +13,7 @@ window.onload = function()
 
 function init()
 {
+		var loader = new THREE.GLTFLoader();
 		var sceneWidth = window.innerWidth/2;
 		var sceneHeight = window.innerHeight/2 + 100;
 		// camera: vertical-field-of-view, aspect-ratio, near, far
@@ -32,7 +33,17 @@ function init()
 		scene = new THREE.Scene();
 
 //maybe here
+var loader = new THREE.GLTFLoader();
 
+loader.load( 'js/sean.glb', function ( gltf ) {
+
+	scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
 
 		renderer = new THREE.WebGLRenderer();
 		renderer.setSize( sceneWidth, sceneHeight );
