@@ -1,25 +1,66 @@
+var camera;
+var scene;
+var renderer;
+var mesh1, mesh2, mesh3, mesh4, mesh5, mesh6, mesh7, mesh8, mesh9;
+var maxX, maxY, maxZ;
+var first=true;
 
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-window.onload = function() {
-var renderer = new THREE.WebGLRenderer();
-
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
-
-var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-var cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
-camera.position.z = 5;
-}
-var animate = function () {
-	requestAnimationFrame( animate );
-
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
-
-	renderer.render( scene, camera );
+window.onload = function()
+{
+		init();
+		animate();
 };
 
-animate();
+function init()
+{
+		var sceneWidth = window.innerWidth/2;
+		var sceneHeight = window.innerHeight/2 + 100;
+		// camera: vertical-field-of-view, aspect-ratio, near, far
+		camera = new THREE.PerspectiveCamera( 75, sceneWidth / sceneHeight, 1, 10000 );
+		camera.position.z = 1000;
+
+		// Define the geometry of the object
+
+
+		// An object becomes visible only if its material-type is defined.
+		material1 = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
+		material2 = new THREE.MeshNormalMaterial( { color: 0xff0000, wireframe: false } );
+
+		// Mesh actually creates the 3D object from the geometry and the material
+
+		scene = new THREE.Fog(0x55AAFF);
+		scene = new THREE.Scene();
+
+//maybe here
+
+
+		renderer = new THREE.WebGLRenderer();
+		renderer.setSize( sceneWidth, sceneHeight );
+		maxX = sceneWidth/2;
+		maxY = sceneHeight/2;
+		maxZ = maxX/2;
+
+		document.getElementById("main").appendChild( renderer.domElement );
+
+		/* Move the objects away from each other */
+
+		// Render finally
+		renderer.render( scene, camera );
+}
+
+function animate()
+{
+		// Calls its function argument when the browser page is available to be refreshed
+		requestAnimationFrame( animate );
+
+		// make some changes to the object so that it appears in motion
+
+		renderer.render( scene, camera );
+}
+
+function rotate (m)
+{
+		m.rotation.x += 0.01;
+		m.rotation.y += 0.02;
+		m.rotation.z += 0.03;
+}
