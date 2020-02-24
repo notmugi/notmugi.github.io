@@ -2,6 +2,7 @@
 
 // simplified on three.js/examples/webgl_loader_GLTF.html
 function main() {
+
     // renderer
     const renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(800, 600);
@@ -20,7 +21,7 @@ function main() {
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
-    loader.load("./z-Monster.gltf", gltf => {
+    loader.load("z-Monster.gltf", gltf => {
         // model is a THREE.Group (THREE.Object3D)
         const mixer = new THREE.AnimationMixer(gltf.scene);
         // animations is a list of THREE.AnimationClip
