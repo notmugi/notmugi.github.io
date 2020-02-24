@@ -5,6 +5,11 @@ var mesh1, mesh2, mesh3, mesh4, mesh5, mesh6, mesh7, mesh8, mesh9;
 var maxX, maxY, maxZ;
 var first=true;
 
+
+
+
+
+
 window.onload = function()
 {
 		init();
@@ -13,12 +18,16 @@ window.onload = function()
 
 function init()
 {
+		var hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
+		var dirLight = new THREE.DirectionalLight( 0xffffff );
 		var loader = new THREE.GLTFLoader();
 		var sceneWidth = window.innerWidth;
 		var sceneHeight = window.innerHeight + 100;
 		// camera: vertical-field-of-view, aspect-ratio, near, far
 		camera = new THREE.PerspectiveCamera( 75, sceneWidth / sceneHeight, 1, 10000 );
 		camera.position.z = 1000;
+		hemiLight.position.set( 0, 300, 0 );
+		dirLight.position.set( 75, 300, -75 );
 
 		// Define the geometry of the object
 
@@ -40,6 +49,9 @@ loader.load('sean.glb', function(gltf) {
     });
     scene.add(sean);
 });
+
+scene.add( hemiLight );
+scene.add( dirLight );
 
 		renderer = new THREE.WebGLRenderer();
 		renderer.setSize( sceneWidth, sceneHeight );
