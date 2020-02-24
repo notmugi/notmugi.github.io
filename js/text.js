@@ -51,9 +51,6 @@ loader.load('js/sean.glb', function(gltf) {
 });
 
 scene.add( hemiLight );
-
-
-
 scene.add( dirLight );
 
 		renderer = new THREE.WebGLRenderer();
@@ -62,7 +59,7 @@ scene.add( dirLight );
 		maxY = sceneHeight/2;
 		maxZ = maxX/2;
 
-		document.getElementById("main").appendChild( renderer.domElement );
+		//document.getElementById("main").appendChild( renderer.domElement );
 
 		/* Move the objects away from each other */
 
