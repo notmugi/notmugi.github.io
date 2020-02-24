@@ -1,1 +1,7 @@
-body { margin: 0; }
+html{
+  image-rendering: pixelated;
+}
+body {
+  margin: 0;
+
+}
