@@ -2,8 +2,8 @@
 
 This website is going to be my landing page for my github projects. The spinny animation was done in javascript and three.js
 
-<b>https://notmugi.github.io</b>
-
+regular link:   <b>https://notmugi.github.io</b>
+shortened link: <b>https://femto.pw/x948</b>
 
 <i>TODO:</i>
 - > Randomize spin direction and speed. up/down & left + speeds
