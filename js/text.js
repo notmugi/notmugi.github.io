@@ -30,9 +30,9 @@ function main() {
 	    scene.add(object);
 	});
         // settings in `sceneList` "Monster"
-        gltf.scene.scale.set(0.4, 0.4, 0.4);
-        gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
-        gltf.scene.position.set(2, 1, 0);
+        //gltf.scene.scale.set(1, 1, 1);
+        //gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
+        //gltf.scene.position.set(2, 1, 0);
 
         scene.add(gltf.scene);
         objs.push({gltf, mixer});
