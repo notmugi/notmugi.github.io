@@ -1,6 +1,6 @@
 # Website Readme
 
-This website is going to be my landing page for my github projects. The spinny animation was done in javascript and three.js
+This website is going to be my landing page for my github projects. </br>The spinny animation was done in javascript and three.js
 </br></br></br>
 regular link:   <b>https://notmugi.github.io</b>
 </br>
