@@ -21,7 +21,7 @@ function main() {
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
-    loader.load("https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/js/sean.glb", gltf => {
+    loader.load("js/sean.glb", gltf => {
 			var sean = gltf.scene;
 	    sean.traverse((node) => {
 	      if (!node.isMesh) return;
