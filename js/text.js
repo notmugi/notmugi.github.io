@@ -17,7 +17,7 @@ function main() {
     // scene and lights
     const scene = new THREE.Scene();
     scene.add(new THREE.AmbientLight(0xcccccc));
-
+ 
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
