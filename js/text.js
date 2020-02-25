@@ -30,18 +30,17 @@ function main() {
 
         // settings in `sceneList` "Monster"
         gltf.scene.scale.set(0.4, 0.4, 0.4);
-        gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
+        //gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
         gltf.scene.position.set(2, 1, 0);
 
         scene.add(sean);
-        objs.push({gltf, mixer});
+        objs.push({gltf});
     });
 
     // animation rendering
     const clock = new THREE.Clock();
     (function animate() {
         // animation with THREE.AnimationMixer.update(timedelta)
-        objs.forEach(({mixer}) => {mixer.update(clock.getDelta());});
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
     })();
