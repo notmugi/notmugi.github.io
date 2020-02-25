@@ -21,7 +21,7 @@ function main() {
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
-			loader.load('js/sean.glb', function(gltf) {
+			loader.load('https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/js/sean.glb', function(gltf) {
 	    var sean = gltf.scene;
 	    sean.traverse((node) => {
 	      if (!node.isMesh) return;
@@ -29,7 +29,7 @@ function main() {
 	    });
 	    scene.add(object);
 	});
-         settings in `sceneList` "Monster"
+        // settings in `sceneList` "Monster"
         gltf.scene.scale.set(0.4, 0.4, 0.4);
         gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
         gltf.scene.position.set(2, 1, 0);
