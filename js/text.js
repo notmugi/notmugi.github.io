@@ -21,13 +21,14 @@ function main() {
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
-    loader.load("https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/js/sean.glb", gltf => {
-        // model is a THREE.Group (THREE.Object3D)
-        const mixer = new THREE.AnimationMixer(gltf.scene);
-        // animations is a list of THREE.AnimationClip
-        for (const anim of gltf.animations) {
-            mixer.clipAction(anim).play();
-        }
+			loader.load('js/sean.glb', function(gltf) {
+	    var sean = gltf.scene;
+	    sean.traverse((node) => {
+	      if (!node.isMesh) return;
+	      node.material.wireframe = true;
+	    });
+	    scene.add(object);
+	});
         // settings in `sceneList` "Monster"
         gltf.scene.scale.set(0.4, 0.4, 0.4);
         gltf.scene.rotation.copy(new THREE.Euler(0, -3 * Math.PI / 4, 0));
