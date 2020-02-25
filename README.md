@@ -7,7 +7,7 @@ The spinny animation was done in javascript and three.js
 https://notmugi.github.io
 
 
-TODO:
+<i>TODO:</i>
 - > Randomize spin direction and speed. up/down & left + speeds
 - > make some other colors & theme changer
 - > add links
