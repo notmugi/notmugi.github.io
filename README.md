@@ -8,7 +8,7 @@ https://notmugi.github.io
 
 
 TODO:
-- > Randomize spin direction and speed. up/down & left + speeds
-- > make some other colors & theme changer
-- > add links
-- > add transitions
+> Randomize spin direction and speed. up/down & left + speeds
+> make some other colors & theme changer
+> add links
+> add transitions
