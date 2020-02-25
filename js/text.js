@@ -9,7 +9,7 @@ function main() {
     document.getElementById('main').appendChild( renderer.domElement );
 
     // camera
-    const camera = new THREE.PerspectiveCamera(20, 3080 / 1080, 0.005, 10000);
+    const camera = new THREE.PerspectiveCamera(15, 3080 / 1080, 0.005, 10000);
     camera.position.set(4, 0, 0); // settings in `sceneList` "Monster"
     camera.up.set(0, 1, 0);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
