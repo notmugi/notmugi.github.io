@@ -30,7 +30,7 @@ function main() {
 
         // settings in `sceneList` "Monster"
         gltf.scene.scale.set(0.7, 0.7, 0.7);
-        gltf.scene.rotation.setFromVector3(0, 90, 0);
+        gltf.scene.rotation.set(0, 0, 0);
         gltf.scene.position.set(2, 1, 0);
 
         scene.add(sean);
