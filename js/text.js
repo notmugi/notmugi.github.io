@@ -29,7 +29,7 @@ function main() {
 	    });
 
         // settings in `sceneList` "Monster"
-        gltf.scene.scale.set(0.4, 0.4, 0.4);
+        gltf.scene.scale.set(0.7, 0.7, 0.7);
         gltf.scene.rotation.copy(new THREE.Euler(90, -90, 90));
         gltf.scene.position.set(2, 1, 0);
 
