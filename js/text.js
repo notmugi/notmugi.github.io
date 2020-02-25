@@ -11,7 +11,7 @@ function main() {
     // camera
     const camera = new THREE.PerspectiveCamera(60, 1080 / 1080, 1, 10000);
     camera.position.set(5, 0, 0); // settings in `sceneList` "Monster"
-    camera.up.set(0, 1, 0);
+    camera.up.set(0, 0, 0);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 		//camera.zoom(1);
     // scene and lights
@@ -30,7 +30,7 @@ function main() {
 
         // settings in `sceneList` "Monster"
         gltf.scene.scale.set(0.4, 0.4, 0.4);
-        gltf.scene.rotation.copy(new THREE.Euler(90, 90, 90));
+        gltf.scene.rotation.copy(new THREE.Euler(90, -90, 90));
         gltf.scene.position.set(2, 1, 0);
 
         scene.add(sean);
