@@ -5,7 +5,7 @@ This website is going to be my landing page for my github projects. The spinny a
 regular link:   <b>https://notmugi.github.io</b>
 </br>
 shortened link: <b>https://femto.pw/x948</b>
-
+</br>
 <i>TODO:</i>
 - > Randomize spin direction and speed. up/down & left + speeds
 - > make some other colors & theme changer
