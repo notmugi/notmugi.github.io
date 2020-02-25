@@ -16,12 +16,12 @@ function main() {
 		//camera.zoom(1);
     // scene and lights
     const scene = new THREE.Scene();
-    scene.add(new THREE.AmbientLight(0xcccccc));
+    scene.add(new THREE.AmbientLight(0xFFFFFFF));
 
     // load gltf model and texture
     const objs = [];
     const loader = new THREE.GLTFLoader();
-    loader.load("js/sean.glb", gltf => {
+    loader.load("js/sean.gltf", gltf => {
 			var sean = gltf.scene;
 	    sean.traverse((node) => {
 	      if (!node.isMesh) return;
@@ -42,7 +42,7 @@ function main() {
     const clock = new THREE.Clock();
     (function animate() {
       scene.rotation.x += 0.000;
-      scene.rotation.y += 0.005;
+      scene.rotation.y -= 0.005;
       scene.rotation.z += 0.000;
         // animation with THREE.AnimationMixer.update(timedelta)
         renderer.render(scene, camera);
