@@ -6,10 +6,26 @@ body {
   background-color: black;
 }
 
-#main {
+#logo {
+
+}
+
+#nav {
+  margin: 0;
+  position: relative;
+  padding-top: 30px;
+  color:white;
+}
+
+.container {
   margin: 0;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
