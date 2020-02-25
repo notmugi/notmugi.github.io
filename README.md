@@ -10,3 +10,4 @@ This website is going to be my landing page for my github projects. The spinny a
 - > make some other colors & theme changer
 - > add links
 - > add transitions
+- > shorten link somehow
