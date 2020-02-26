@@ -1,24 +1,26 @@
 
-
+//Random y and z spin value between 0.0005 and 0.02
 const randSpeedY = Math.random() * (0.02 - 0.0005) + 0.0005;
-//Random y spin value between 0.0005 and 0.02
 const randSpeedZ = Math.random() * (0.02 - 0.0005) + 0.0005;
-//Random z spin value between 0.0005 and 0.02
-const randStartType = Math.round(Math.random());
+
 //Randomize the start type to either 1(y spin) or 0(z spin)
-const specialSpin = Math.round(Math.random() * (5 - 0) + 0);
-//SpEcIaL SpIn TyPe UwU 1 iN 6 ChAnCe
+const randStartType = Math.round(Math.random());
+
+//SpEcIaL SpIn TyPe UwU 1 iN 10 ChAnCe
+const specialSpin = Math.round(Math.random() * (10 - 0) + 0);
+
 
 function main() {
 
 // Initialize all important stuff
-    const renderer = new THREE.WebGLRenderer( { antialias: false,  alpha: true  }); renderer.setClearColor( 0x000000, 0 );
+    const renderer = new THREE.WebGLRenderer( { antialias: false,  alpha: true  });
     const loader = new THREE.GLTFLoader();
     const camera = new THREE.PerspectiveCamera(13, 3080 / 1080, 0.005, 10000);
     const scene = new THREE.Scene();
 
 // set up camera, renderer, scene, and append it all to #main
     renderer.setSize(360, 140);
+    renderer.setClearColor( 0x000000, 0 );
     camera.position.set(4, 0, 0);
     camera.up.set(0, 1, 0);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -51,7 +53,7 @@ function main() {
     }
 
 //special spin(both spin types!!!!!!!!!!!!!! wow)
-    if (specialSpin == 5){
+    if (specialSpin == 10){
       scene.rotation.y -= randSpeedY;
       scene.rotation.z += randSpeedZ;
     }
@@ -60,7 +62,6 @@ function main() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   })();
-
 
 //end of main
 }
