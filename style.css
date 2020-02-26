@@ -32,16 +32,20 @@ body {
   margin-top: 50px;
 }
 
+/*links*/
 a{
   color: white;
   text-decoration: none;
   font-family: Verdana, Tahoma;
 }
 
+/*hovering a link*/
 a:hover{
   color: lightblue;
   transition-duration: 1s;
 }
+
+/*unhovering links*/
 a:not(:hover){
   transition-duration: 1s;
 }
