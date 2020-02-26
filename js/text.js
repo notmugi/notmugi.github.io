@@ -7,8 +7,8 @@ const randSpeedZ = Math.random() * (0.02 - 0.0005) + 0.0005;
 const randStartType = Math.round(Math.random());
 //Randomize the start type to either 1(y spin) or 0(z spin)
 
-const specialSpin = Math.round(Math.random() * (5 - 0) + 0);
-//SpEcIaL SpIn TyPe UwU 1 iN 6 ChAnCe
+const specialSpin = Math.round(Math.random() * (10 - 0) + 0);
+//SpEcIaL SpIn TyPe UwU 1 iN 10 ChAnCe
 
 function main() {
 
@@ -46,7 +46,7 @@ function main() {
     }
 
 //special spin(both spin types!!!!!!!!!!!!!! wow)
-    if (specialSpin == 5){
+    if (specialSpin == 10){
       scene.rotation.y -= randSpeedY;
       scene.rotation.z += randSpeedZ;
     }
