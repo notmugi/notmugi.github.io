@@ -14,6 +14,8 @@ shortened link: <b>https://femto.pw/x948</b>
 - > ~~Randomize spin direction and speed. up/down & left + speeds~~
 - > make some other colors & theme changer
 - > add links
+- > make mobile version of site
+- > add social media
 - > ~~add transitions~~
 - > ~~add font~~
 - > ~~shorten link somehow~~
