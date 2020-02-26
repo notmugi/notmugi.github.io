@@ -15,7 +15,7 @@ body {
 .container {
   display:flex;
   flex-direction: column;
-  width:60%;
+  width:75vw;
 }
 
 /*logo*/
@@ -29,10 +29,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
 }
 
 a{
   color: white;
   text-decoration: none;
   font-family: Verdana, Tahoma;
+}
+
+a:hover{
+  color: lightblue;
+  transition-duration: 1s;
+}
+a:not(:hover){
+  transition-duration: 1s;
 }
