@@ -11,4 +11,5 @@ shortened link: <b>https://femto.pw/x948</b>
 - > make some other colors & theme changer
 - > add links
 - > add transitions
+- > ~~add font~~
 - > ~~shorten link somehow~~
