@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   background-color: black;
   image-rendering: pixelated;
 }
@@ -9,21 +8,29 @@ body {
     src: url(https://github.com/notmugi/notmugi.github.io/blob/master/font/AirbnbCerealBook.ttf?raw=true) format("truetype");
 }
 
+
+/*div containing all divs*/
 #main{
   display:flex;
   justify-content: center;
   align-items: center;
+  margin-top:50%;
 }
+
+/*div containing logo and navbar*/
 .container {
   display:flex;
   flex-direction: column;
   background-color:blue;
   width:70%;
 }
+
+/*logo*/
 #logo{
   display:flex;
   justify-content: center;
 }
+/*navbar*/
 .links{
   display: flex;
   justify-content: space-around;
