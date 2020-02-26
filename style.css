@@ -2,13 +2,10 @@ body {
   background-color: black;
   image-rendering: pixelated;
 }
-
 @font-face {
     font-family: "Airbnb";
     src: url(https://github.com/notmugi/notmugi.github.io/blob/master/font/AirbnbCerealBook.ttf?raw=true) format("truetype");
 }
-
-
 /*div containing all divs*/
 #main{
   display:flex;
@@ -24,7 +21,6 @@ body {
   background-color:blue;
   width:70%;
 }
-
 /*logo*/
 #logo{
   display:flex;
@@ -36,10 +32,4 @@ body {
   justify-content: space-around;
   align-items: center;
   background-color:red;
-}
-
-a.customfont {
-  color: white;
-  text-decoration: none;
-  font-family: Verdana, Tahoma;
 }
