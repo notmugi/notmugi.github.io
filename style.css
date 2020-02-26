@@ -6,8 +6,9 @@ body {
   background-color: black;
 }
 
-#logo {
-
+@font-face {
+    font-family: "Airbnb";
+    src: url(https://github.com/notmugi/notmugi.github.io/blob/master/font/AirbnbCerealBold.ttf?raw=true) format("truetype");
 }
 
 #nav {
@@ -25,7 +26,8 @@ body {
   transform: translate(-50%, -50%);
 }
 
-a {
+a.customfont {
   color: white;
   text-decoration: none;
+  font-family: "Airbnb", Verdana, Tahoma;
 }

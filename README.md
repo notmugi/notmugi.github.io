@@ -7,8 +7,8 @@ regular link:   <b>https://notmugi.github.io</b>
 shortened link: <b>https://femto.pw/x948</b>
 </br></br></br>
 <i>TODO:</i>
-- > Randomize spin direction and speed. up/down & left + speeds
+- > ~~Randomize spin direction and speed. up/down & left + speeds~~
 - > make some other colors & theme changer
 - > add links
 - > add transitions
-- > shorten link somehow
+- > ~~shorten link somehow~~

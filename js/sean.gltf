@@ -6,42 +6,51 @@
     "scene" : 0,
     "scenes" : [
         {
-            "extras" : {
-                "vs" : {
-                    "export_list" : [
-                        {
-                            "name" : "Collection.dmx",
-                            "item_name" : "Collection",
-                            "ob_type" : "COLLECTION",
-                            "icon" : "GROUP"
-                        }
-                    ]
-                },
-                "embed_textures" : 0
-            },
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1,
+                2
             ]
         }
     ],
     "nodes" : [
         {
-            "extras" : {},
-            "mesh" : 0,
-            "name" : "Text.000",
+            "name" : "Light",
             "rotation" : [
-                -0.7071067094802856,
-                0,
-                0,
-                0.70710688829422
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
             ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Text.000"
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "extras" : {},
             "name" : "Material.001",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
@@ -74,23 +83,23 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 504,
+            "count" : 640,
             "max" : [
-                1.0906225442886353,
-                0,
-                0.28807133436203003
+                1.026825189590454,
+                0.30051684379577637,
+                0.06285183131694794
             ],
             "min" : [
-                -1.0169425010681152,
-                -0.13064390420913696,
-                -0.2939321994781494
+                -1.0807398557662964,
+                -0.2814866900444031,
+                -0.06779207289218903
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 504,
+            "count" : 640,
             "type" : "VEC3"
         },
         {
@@ -103,23 +112,23 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 6048,
+            "byteLength" : 7680,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 6048,
-            "byteOffset" : 6048
+            "byteLength" : 7680,
+            "byteOffset" : 7680
         },
         {
             "buffer" : 0,
             "byteLength" : 1440,
-            "byteOffset" : 12096
+            "byteOffset" : 15360
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 13536,
+            "byteLength" : 16800,
             "uri" : "sean.bin"
         }
     ]

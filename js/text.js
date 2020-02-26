@@ -1,3 +1,13 @@
+
+
+const randSpeedY = Math.random() * (0.0005 - 0.02) + 0.02;
+//Random y spin value between 0.0005 and 0.02
+const randSpeedZ = Math.random() * (0.0005 - 0.02) + 0.02;
+//Random z spin value between 0.0005 and 0.02
+const randStartType = Math.round(Math.random());
+//Randomize the start type to either 1(y spin) or 0(z spin)
+
+
 function main() {
 
 // Initialize all important stuff
@@ -29,11 +39,17 @@ function main() {
     scene.add(sean);
   });
 
-// Start animating,render each frame & camera
+
   (function animate() {
-    scene.rotation.x += 0.000;
-    scene.rotation.y -= 0.005;
-    scene.rotation.z += 0.000;
+
+//if the random start type is 1, do y spin, else do z spin
+    if (randStartType == 1) {
+      scene.rotation.y -= randSpeedY;
+    }else if (randStartType == 0){
+      scene.rotation.z += randSpeedZ;
+    }
+
+//render the stuff and things
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   })();
