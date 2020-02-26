@@ -2,34 +2,37 @@ body {
   background-color: black;
   image-rendering: pixelated;
 }
-@font-face {
-    font-family: "Airbnb";
-    src: url(https://github.com/notmugi/notmugi.github.io/blob/master/font/AirbnbCerealBook.ttf?raw=true) format("truetype");
-}
+
 /*div containing all divs*/
 #main{
   display:flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height:80vh;
 }
 
 /*div containing logo and navbar*/
 .container {
   display:flex;
   flex-direction: column;
-  background-color:blue;
   width:70%;
 }
+
 /*logo*/
 #logo{
   display:flex;
   justify-content: center;
 }
+
 /*navbar*/
 .links{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color:red;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Tahoma;
 }
