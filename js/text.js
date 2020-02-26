@@ -13,7 +13,7 @@ function main() {
 // Initialize all important stuff
     const renderer = new THREE.WebGLRenderer( { antialias: false,  alpha: true  }); renderer.setClearColor( 0x000000, 0 );
     const loader = new THREE.GLTFLoader();
-    const camera = new THREE.PerspectiveCamera(15, 3080 / 1080, 0.005, 10000);
+    const camera = new THREE.PerspectiveCamera(13, 3080 / 1080, 0.005, 10000);
     const scene = new THREE.Scene();
 
 // set up camera, renderer, scene, and append it all to #main
