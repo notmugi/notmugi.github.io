@@ -49,3 +49,7 @@ a:hover{
 a:not(:hover){
   transition-duration: 1s;
 }
+
+#animContain{
+  transition-duration: 9s;
+}
