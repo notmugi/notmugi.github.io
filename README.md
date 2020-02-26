@@ -16,6 +16,8 @@ shortened link: <b>https://femto.pw/x948</b>
 - > add links
 - > make mobile version of site
 - > add social media
+- > make title
+- > add favicon.ico
 - > ~~add transitions~~
 - > ~~add font~~
 - > ~~shorten link somehow~~
