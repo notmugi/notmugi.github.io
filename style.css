@@ -27,12 +27,9 @@ body {
 /*navbar*/
 .links{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 50px;
-}
-.fadeInDownBig{
-
 }
 
 /*links*/
@@ -40,6 +37,9 @@ a{
   color: white;
   text-decoration: none;
   font-family: Verdana, Tahoma;
+  transition-duration: 1s;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 /*hovering a link*/
@@ -47,12 +47,20 @@ a:hover{
   color: lightblue;
   transition-duration: 1s;
 }
-
-/*unhovering links*/
-a:not(:hover){
-  transition-duration: 1s;
+#discord{
+display:flex;
+align-content: center;
+align-items: center;
+justify-content: center;
+width: 60vw;
 }
 
-#animContain{
-  transition-duration: 9s;
+.displaytextone, .displaytexttwo{
+  color: #1a1a1a;
+  text-decoration: none;
+  font-family: Verdana, Tahoma;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  transition-duration: 1s;
+  font-weight: bolder;
 }
