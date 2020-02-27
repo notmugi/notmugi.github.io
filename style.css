@@ -59,8 +59,8 @@ width: 60vw;
   color: #1a1a1a;
   text-decoration: none;
   font-family: Verdana, Tahoma;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
   transition-duration: 1s;
   font-weight: bolder;
 }
