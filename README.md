@@ -12,10 +12,9 @@ shortened link: <b>https://femto.pw/x948</b>
 </br></br></br>
 <i>TODO:</i>
 - > ~~Randomize spin direction and speed. up/down & left + speeds~~
-- > make some other colors & theme changer
-- > add links
+- > ~~add links~~
 - > make mobile version of site
-- > add social media
+- > ~~add social media~~
 - > make title
 - > add favicon.ico
 - > ~~add transitions~~
