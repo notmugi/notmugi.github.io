@@ -8,7 +8,7 @@ there is a special 1-in-10 spin animation where it spins on both axes.
 </br></br></br>
 regular link:   <b>https://notmugi.github.io</b>
 </br>
-shortened link: <b>https://femto.pw/x948</b>
+shortened link: <b>https://waa.ai/seanGH</b>
 </br></br></br>
 <i>TODO:</i>
 - > ~~Randomize spin direction and speed. up/down & left + speeds~~
