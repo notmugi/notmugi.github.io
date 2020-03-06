@@ -15,7 +15,7 @@ shortened link: <b>https://waa.ai/seanGH</b>
 - > ~~add links~~
 - > make mobile version of site
 - > ~~add social media~~
-- > ~~make title~~
+- > make title
 - > ~~add favicon.ico~~
 - > ~~add transitions~~
 - > ~~add font~~
