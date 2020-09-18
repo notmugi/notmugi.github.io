@@ -1,3 +1,7 @@
+ @font-face {
+  font-family: menloFont;
+  src: url(Menlo-Regular.ttf);
+}
 body {
   background-color: black;
   image-rendering: pixelated;
@@ -36,7 +40,7 @@ body {
 a{
   color: white;
   text-decoration: none;
-  font-family: Menlo, Verdana, Tahoma;
+  font-family: menloFont, Verdana, Tahoma;
   transition-duration: 1s;
   margin-left: 5vw;
   margin-right: 5vw;
