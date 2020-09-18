@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'menloFont';
-    src: url('https://github.com/notmugi/notmugi.github.io/raw/master/menlo-regular-webfont.woff2') format('woff2'),
-         url('https://github.com/notmugi/notmugi.github.io/raw/master/menlo-regular-webfont.woff') format('woff');
+    src: url('../notmugi.github.io/menlo-regular-webfont.woff2') format('woff2'),
     font-weight: normal;
     font-style: normal;
 }
@@ -43,7 +42,7 @@ body {
 a{
   color: white;
   text-decoration: none;
-  font-family: menloFont, Verdana, Tahoma;
+  font-family: menloFont;
   transition-duration: 1s;
   margin-left: 5vw;
   margin-right: 5vw;
@@ -65,10 +64,12 @@ width: 60vw;
 .displaytextone, .displaytexttwo{
   color: #FFFFFF;
   text-decoration: none;
-  font-family: Verdana, Tahoma;
+  font-family: menloFont;
   margin-left: 0.5vw;
   margin-right: 0.5vw;
   transition-duration: 1s;
   font-weight: bolder;
 }
-
+a.customfont{
+	font-family: menloFont;
+}
