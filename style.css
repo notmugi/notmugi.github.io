@@ -36,7 +36,7 @@ body {
 a{
   color: white;
   text-decoration: none;
-  font-family: Verdana, Tahoma;
+  font-family: Menlo, Verdana, Tahoma;
   transition-duration: 1s;
   margin-left: 5vw;
   margin-right: 5vw;
