@@ -28,7 +28,7 @@ function main() {
     document.getElementById('logo').appendChild( renderer.domElement );
 
 // use loader to load the gltf & traverse it to set the material
-    loader.load("js/sean.gltf", gltf => {
+    loader.load("js/name.gltf", gltf => {
 		var sean = gltf.scene;
 	  sean.traverse((node) => {
 	     if (!node.isMesh) return;
