@@ -5,7 +5,8 @@
     font-style: normal;
 }
 body {
-  background-color: black;
+  background-color: white;
+  color: #000000;
   image-rendering: pixelated;
 }
 
@@ -40,12 +41,18 @@ body {
 
 /*links*/
 a{
-  color: white;
+  color: black;
   text-decoration: none;
   font-family: menloFont;
   transition-duration: 1s;
   margin-left: 5vw;
   margin-right: 5vw;
+}
+
+#linkHolder{
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
 }
 
 /*hovering a link*/
@@ -62,7 +69,7 @@ width: 60vw;
 }
 
 .displaytextone, .displaytexttwo{
-  color: #707070;
+  color: #000000;
   text-decoration: none;
   font-family: menloFont;
   margin-left: 0.5vw;
@@ -72,7 +79,7 @@ width: 60vw;
 }
 .displaytextthree{
   text-align: center;
-  color: #707070;
+  color: #000000;
   text-decoration: none;
   font-family: menloFont;
   margin-left: 0.5vw;
@@ -82,7 +89,7 @@ width: 60vw;
 }
 .displaytextfour{
   text-align: center;
-  color: #707070;
+  color: #000000;
   text-decoration: none;
   font-family: menloFont;
   margin-left: 0.5vw;
