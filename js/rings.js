@@ -11,12 +11,13 @@
   // Renderer setup
   var renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
   renderer.setClearColor(0x000000, 0);
-  // Pixel ratio scales from 0.5 (large screens) to 1.0 (small screens)
+  // Pixel ratio: 0.5 on most screens, fades to 1.0 on phone portrait
   function getPixelRatio() {
-    var w = window.innerWidth;
-    if (w >= 1200) return 0.5;
-    if (w <= 480) return 1.0;
-    return 0.5 + 0.5 * (1 - (w - 480) / (1200 - 480));
+    var aspect = window.innerWidth / window.innerHeight;
+    if (aspect >= 0.8) return 0.5;  // desktop + landscape + most tablets
+    if (aspect <= 0.5) return 1.0;  // tall phone portrait
+    // Smooth fade between 0.8 and 0.5 aspect
+    return 0.5 + 0.5 * (1 - (aspect - 0.5) / 0.3);
   }
   renderer.setPixelRatio(getPixelRatio());
   renderer.shadowMap.enabled = true;
