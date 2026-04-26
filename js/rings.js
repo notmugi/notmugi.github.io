@@ -11,7 +11,14 @@
   // Renderer setup
   var renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
   renderer.setClearColor(0x000000, 0);
-  renderer.setPixelRatio(0.5);
+  // Pixel ratio scales from 0.5 (large screens) to 1.0 (small screens)
+  function getPixelRatio() {
+    var w = window.innerWidth;
+    if (w >= 1200) return 0.5;
+    if (w <= 480) return 1.0;
+    return 0.5 + 0.5 * (1 - (w - 480) / (1200 - 480));
+  }
+  renderer.setPixelRatio(getPixelRatio());
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.BasicShadowMap;
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -173,6 +180,7 @@
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.fov = getFOV();
     camera.updateProjectionMatrix();
+    renderer.setPixelRatio(getPixelRatio());
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 })();
