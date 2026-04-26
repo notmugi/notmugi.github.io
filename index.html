@@ -57,5 +57,11 @@
 </div>
 
 </div>
+<div id="debug-speeds" style="position: fixed; bottom: 10px; left: 10px; color: #FFD700; font-family: monospace; font-size: 12px; z-index: 9999;">
+</div>
+<script>
+  document.getElementById('debug-speeds').textContent =
+    'randSpeedY: ' + randSpeedY.toFixed(6) + ' | randSpeedZ: ' + randSpeedZ.toFixed(6);
+</script>
 </body>
 </html>
