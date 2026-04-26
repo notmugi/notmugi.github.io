@@ -47,8 +47,9 @@ a {
   text-decoration: none;
   font-family: menloFont;
   transition-duration: 1s;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  white-space: nowrap;
 }
 
 a:hover {
