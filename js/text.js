@@ -1,7 +1,7 @@
-//Random y spin value between 0.0005 and 0.001
+//Random y spin value between 0.005 and 0.01225
 const randSpeedY = Math.random() * (0.008 - 0.00075) + 0.005;
 
-//Random z spin value between 0.0005 and 0.001
+//Random z spin value between 0.005 and 0.00925
 const randSpeedZ = Math.random() * (0.005 - 0.00075) + 0.005;
 
 //Randomize the start type to either 1(y spin) or 0(z spin)
@@ -25,20 +25,17 @@ function main() {
     camera.position.set(4, 0, 0);
     camera.up.set(0, 1, 0);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
-    // Ambient light disabled
-    // scene.add(new THREE.AmbientLight(0x333333));
-
     // Group for the model so lights stay stationary in world space
     const modelGroup = new THREE.Group();
     scene.add(modelGroup);
 
-    // Golden point lights (stationary in world space, front-facing, elevated)
+    // Golden point lights (stationary in world space)
     const pointLight1 = new THREE.PointLight(0xFFD700, 3.0, 50);
-    pointLight1.position.set(4, 0, 2);  // camera position, left side, elevated
+    pointLight1.position.set(4, 0, 2);
     scene.add(pointLight1);
 
     const pointLight2 = new THREE.PointLight(0xFFA500, 3.0, 50);
-    pointLight2.position.set(4, 0, -2); // camera position, right side, elevated
+    pointLight2.position.set(4, 0, -2);
     scene.add(pointLight2);
 
     document.getElementById('logo').appendChild( renderer.domElement );
@@ -61,6 +58,8 @@ function main() {
     gltf.scene.rotation.set(0, 1.57, 0);
     gltf.scene.position.set(0, 0, 0);
     modelGroup.add(sean);
+    // Fade in the logo once the model is loaded
+    document.getElementById('logo').classList.add('loaded');
   });
 
 //if the random start type is 1, do y spin, else do z spin

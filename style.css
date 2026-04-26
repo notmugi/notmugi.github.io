@@ -25,11 +25,21 @@ body {
   width:60vw;
 }
 
-/*logo*/
+/*logo — with bloom/glow effect, starts hidden and fades in*/
 #logo{
   display:flex;
   justify-content: center;
+  position: relative;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 0 40px rgba(0, 0, 0, 0.1));
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
+
+#logo.loaded{
+  opacity: 1;
+}
+
 
 /*navbar*/
 .links{
@@ -87,16 +97,7 @@ width: 60vw;
   margin-top: 2vw;
   transition-duration: 1s;
 }
-.displaytextfour{
-  text-align: center;
-  color: #000000;
-  text-decoration: none;
-  font-family: menloFont;
-  margin-left: 0.5vw;
-  margin-right: 0.5vw;
-  margin-top: 0vw;
-  transition-duration: 1s;
-}
+
 a.customfont{
 	font-family: menloFont;
 }
