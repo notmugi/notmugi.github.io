@@ -30,17 +30,20 @@ body {
   max-width: 60vw;
 }
 
-@media (max-width: 768px) {
-  .container {
-    max-width: 95vw;
-  }
-}
-
 .links {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .container {
+    max-width: 95vw;
+  }
+  .links {
+    flex-wrap: wrap;
+  }
 }
 
 a {
