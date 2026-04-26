@@ -1,8 +1,8 @@
 //Random y spin value between 0.0005 and 0.001
-const randSpeedY = Math.random() * (0.008 - 0.00075) + 0.002;
+const randSpeedY = Math.random() * (0.008 - 0.00075) + 0.005;
 
 //Random z spin value between 0.0005 and 0.001
-const randSpeedZ = Math.random() * (0.005 - 0.00075) + 0.002;
+const randSpeedZ = Math.random() * (0.005 - 0.00075) + 0.005;
 
 //Randomize the start type to either 1(y spin) or 0(z spin)
 const randStartType = Math.round(Math.random());
