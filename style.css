@@ -1,56 +1,48 @@
 @font-face {
-    font-family: 'menloFont';
-    src: url('https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/menlo-regular-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'menloFont';
+  src: url('https://raw.githubusercontent.com/notmugi/notmugi.github.io/master/menlo-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
+
 body {
   background-color: white;
   color: #000000;
   image-rendering: pixelated;
+  margin: 0;
+  overflow: hidden;
 }
 
-/*div containing all divs*/
-#main{
-  display:flex;
+#main {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  height:80vh;
-}
-
-/*div containing logo and navbar*/
-.container {
-  display:flex;
-  flex-direction: column;
-  width:60vw;
-}
-
-/*logo — with bloom/glow effect, starts hidden and fades in*/
-#logo{
-  display:flex;
-  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2vh;
   position: relative;
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3))
-          drop-shadow(0 0 40px rgba(0, 0, 0, 0.1));
-  opacity: 0;
-  transition: opacity 1.2s ease;
+  z-index: 1;
 }
 
-#logo.loaded{
-  opacity: 1;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  max-width: 60vw;
 }
 
+@media (max-width: 768px) {
+  .container {
+    max-width: 95vw;
+  }
+}
 
-/*navbar*/
-.links{
+.links {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
 
-/*links*/
-a{
+a {
   color: black;
   text-decoration: none;
   font-family: menloFont;
@@ -59,45 +51,27 @@ a{
   margin-right: 5vw;
 }
 
-#linkHolder{
+a:hover {
+  color: lightblue;
+}
+
+#linkHolder {
   background-color: transparent;
-  padding: 1rem 2rem;
+  padding: 0.4rem 1rem;
   border-radius: 0.75rem;
 }
 
-/*hovering a link*/
-a:hover{
-  color: lightblue;
-  transition-duration: 1s;
-}
-#discord{
-display:flex;
-align-content: center;
-align-items: center;
-justify-content: center;
-width: 60vw;
+#discord {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.displaytextone, .displaytexttwo{
-  color: #000000;
-  text-decoration: none;
-  font-family: menloFont;
-  margin-left: 0.5vw;
-  margin-right: 0.5vw;
-  margin-top: 1vw;
-  transition-duration: 1s;
-}
-.displaytextthree{
+.displaytextthree {
   text-align: center;
-  color: #000000;
+  color: #bfbfbf;
   text-decoration: none;
   font-family: menloFont;
-  margin-left: 0.5vw;
-  margin-right: 0.5vw;
-  margin-top: 2vw;
-  transition-duration: 1s;
-}
-
-a.customfont{
-	font-family: menloFont;
+  margin: 0.5vw;
 }
